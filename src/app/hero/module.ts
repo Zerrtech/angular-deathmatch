@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-//import { CoreModule } from '../core/module';
-//import { AnimalListComponent } from './animal-list/component';
 import { HeroAPIActions } from './api/actions';
 import { HeroAPIEpics } from './api/epics';
 import { HeroAPIService } from './api/service';
@@ -12,11 +11,31 @@ import { HeroListItemComponent } from './heroListItem/component';
 import { HeroListContainerComponent } from './heroListContainer/component';
 import { HeroDetailComponent } from './heroDetail/component';
 import { HeroDetailContainerComponent } from './heroDetailContainer/component';
+import { HeroRoutes } from './routing';
+
 
 @NgModule({
-  declarations: [HeroListContainerComponent, HeroListComponent, HeroListItemComponent, HeroDetailContainerComponent, HeroDetailComponent],
-  exports: [HeroListContainerComponent, HeroListComponent, HeroDetailContainerComponent],
-  imports: [StoreModule, CommonModule],
-  providers: [HeroAPIActions, HeroAPIEpics, HeroAPIService],
+  declarations: [
+    HeroListContainerComponent,
+    HeroListComponent,
+    HeroListItemComponent,
+    HeroDetailContainerComponent,
+    HeroDetailComponent
+  ],
+  exports: [
+    RouterModule,
+    HeroListContainerComponent,
+    HeroDetailContainerComponent
+  ],
+  imports: [
+    RouterModule.forRoot(HeroRoutes),
+    StoreModule,
+    CommonModule
+  ],
+  providers: [
+    HeroAPIActions,
+    HeroAPIEpics,
+    HeroAPIService
+  ],
 })
 export class HeroModule {}
