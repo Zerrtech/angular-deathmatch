@@ -1,16 +1,8 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, ChangeDetectionStrategy, EventEmitter } from '@angular/core';
 import { dispatch, select, select$, WithSubStore } from '@angular-redux/store';
 import { Observable } from 'rxjs/Observable';
-
 import { IHero } from '../model';
 
-/**
- * Fractal component example.
- */
-// @WithSubStore({
-//   basePathMethodName: 'getBasePath',
-//   localReducer: herComponentReducer,
-// })
 @Component({
   selector: 'hero-detail',
   templateUrl: './component.html',
@@ -20,5 +12,10 @@ import { IHero } from '../model';
 export class HeroDetailComponent {
 
   @Input() hero: IHero;
+  @Output() onClose = new EventEmitter();
+
+  onClickClose() {
+    this.onClose.emit(true);
+  }
 
 }
