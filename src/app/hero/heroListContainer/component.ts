@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { select, select$ } from '@angular-redux/store';
 //import { pipe, values, sortBy, prop } from 'ramda';
 import { Observable } from 'rxjs/Observable';
 
-import { HeroAPIActions } from './hero/api/actions';
-import { IHero } from './hero/model';
+import { HeroAPIActions } from '../api/actions';
+import { IHero } from '../model';
 
 // export const sortHeroes = (heroList$: Observable<[]>) =>
 //   animalDictionary$.map(
@@ -13,13 +14,12 @@ import { IHero } from './hero/model';
 //       sortBy(prop('name'))));
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'hero-list-container',
+  template: '<hero-list [heroes]="heroes$ | async" (onSelect)="changeHero($event, hero)"></hero-list>'
 })
-export class AppComponent {
+export class HeroListContainerComponent {
   title = 'app';
-  // Get elephant-related data out of the Redux store as observables.
+  // Get data out of the Redux store as observables.
   @select(['heroes', 'heroes']) // @select$(['heroes'], sortHeroes)
   readonly heroes$: Observable<IHero[]>;
 
@@ -29,7 +29,14 @@ export class AppComponent {
   @select(['heroes', 'error'])
   readonly error$: Observable<any>;
 
-  constructor(actions: HeroAPIActions) {
+  changeHero(hero: IHero) {
+    this.router.navigate(['/hero', hero.id]);
+  }
+
+  constructor(
+    actions: HeroAPIActions,
+    private router: Router
+  ) {
     actions.loadHeroes();
   }
 }
