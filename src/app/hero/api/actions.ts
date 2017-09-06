@@ -18,14 +18,14 @@ export class HeroAPIActions {
   @dispatch()
   loadHeroes = (): HeroAPIAction => ({
     type: HeroAPIActions.LOAD_HEROES,
-    payload: null,
-    meta: null
+    payload: [],
+    meta: {}
   });
 
   loadStarted = (): HeroAPIAction => ({
     type: HeroAPIActions.LOAD_STARTED,
-    payload: null,
-    meta: null
+    payload: [],
+    meta: {}
   })
 
   loadSucceeded = (payload: Payload): HeroAPIAction => ({
@@ -34,7 +34,7 @@ export class HeroAPIActions {
     meta: null
   })
 
-  loadFailed = (error): HeroAPIAction => ({
+  loadFailed = (error:any): HeroAPIAction => ({
     type: HeroAPIActions.LOAD_FAILED,
     payload: null,
     error,
