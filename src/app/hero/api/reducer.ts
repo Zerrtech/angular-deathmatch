@@ -1,6 +1,5 @@
 import { HeroAPIAction, HeroAPIActions } from './actions';
 import { IHeroList } from '../model';
-//import { indexBy, prop } from 'ramda';
 import { Action } from 'redux';
 
 const INITIAL_STATE: IHeroList = {
@@ -9,8 +8,6 @@ const INITIAL_STATE: IHeroList = {
   error: null,
 };
 
-// A higher-order reducer: accepts an animal type and returns a reducer
-// that only responds to actions for that particular animal type.
 export function createHeroAPIReducer() {
   return function heroReducer(state: IHeroList = INITIAL_STATE,
     a: Action): IHeroList {

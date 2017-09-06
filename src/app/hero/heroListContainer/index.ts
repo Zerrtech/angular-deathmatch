@@ -23,12 +23,6 @@ export class HeroListContainerComponent {
   @select$(['heroes', 'heroes'], sortHeroes)
   readonly heroes$: Observable<IHero[]>;
 
-  @select(['heroes', 'loading'])
-  readonly loading$: Observable<boolean>;
-
-  @select(['heroes', 'error'])
-  readonly error$: Observable<any>;
-
   changeHero(hero: IHero) {
     this.router.navigate(['/hero', hero.id]);
   }
