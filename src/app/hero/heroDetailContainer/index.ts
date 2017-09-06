@@ -29,7 +29,7 @@ export class HeroDetailContainerComponent {
   }
 
   onClose() {
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 
   ngOnDestroy() {
