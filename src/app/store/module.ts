@@ -1,25 +1,12 @@
 import { NgModule } from '@angular/core';
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { NgReduxRouterModule, NgReduxRouter } from '@angular-redux/router';
-// import {
-//   applyMiddleware,
-//   Store,
-//   combineReducers,
-//   compose,
-//   createStore
-// } from 'redux';
-// Redux ecosystem stuff.
 import { createLogger } from 'redux-logger';
 
 // The top-level reducers and epics that make up our app's logic.
-import { IAppState } from './model';
+import { IAppState, initialAppState } from './model';
 import { rootReducer } from './reducers';
 import { RootEpics } from './epics';
-
-// export const store: Store<IAppState> = createStore(
-//   rootReducer,
-//   applyMiddleware(createLogger())
-// );
 
 @NgModule({
   imports: [NgReduxModule, NgReduxRouterModule],
@@ -37,8 +24,7 @@ export class StoreModule {
     // it too.
     store.configureStore(
       rootReducer,
-      // JRZ I should not have to define this here, sub-stores should define their own inital state
-      {heroes: { heroes: [], loading: false, error: null }},
+      initialAppState,
       [ createLogger(), ...rootEpics.createEpics() ],
       devTools.isEnabled() ? [ devTools.enhancer() ] : []);
 
