@@ -4,19 +4,18 @@ import { Observable } from 'rxjs/Observable';
 import { IHero } from '../model';
 
 @Component({
-  selector: 'hero-list-item',
-  templateUrl: './component.html',
-  styleUrls: ['./component.css'],
+  selector: 'hero-detail',
+  templateUrl: './index.html',
+  styleUrls: ['./index.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeroListItemComponent {
+export class HeroDetailComponent {
 
   @Input() hero: IHero;
-  @Output() onSelect = new EventEmitter<IHero>();
+  @Output() onClose = new EventEmitter();
 
-  onClick(event: Event, hero: IHero) {
-    console.log('clicked hero:', hero);
-    this.onSelect.next(hero);
+  onClickClose() {
+    this.onClose.emit(true);
   }
 
 }

@@ -6,11 +6,11 @@ import { HeroAPIActions } from './api/actions';
 import { HeroAPIEpics } from './api/epics';
 import { HeroAPIService } from './api/service';
 import { StoreModule } from '../store/module';
-import { HeroListComponent } from './heroList/component';
-import { HeroListItemComponent } from './heroListItem/component';
-import { HeroListContainerComponent } from './heroListContainer/component';
-import { HeroDetailComponent } from './heroDetail/component';
-import { HeroDetailContainerComponent } from './heroDetailContainer/component';
+import { HeroListComponent } from './heroList';
+import { HeroListItemComponent } from './heroListItem';
+import { HeroListContainerComponent } from './heroListContainer';
+import { HeroDetailComponent } from './heroDetail';
+import { HeroDetailContainerComponent } from './heroDetailContainer';
 import { HeroRoutes } from './routing';
 
 

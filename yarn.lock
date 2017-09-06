@@ -10,12 +10,6 @@
     source-map "^0.5.6"
     typescript "^2.3.3"
 
-"@angular-redux/form@^6.6.0":
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/@angular-redux/form/-/form-6.6.0.tgz#8b958748142188342071ece7740b6ba24c5b9a5a"
-  dependencies:
-    immutable "^3.8.1"
-
 "@angular-redux/router@^6.3.1":
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@angular-redux/router/-/router-6.3.1.tgz#847f790b3e3b2d1c8bdad4d4bf3068cd4e0fbf07"
@@ -164,10 +158,6 @@
   resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.3.6.tgz#1aa66e0ab2c4799a4ad14b675e13953aa5fcd436"
   dependencies:
     tsickle "^0.21.0"
-
-"@ng-bootstrap/ng-bootstrap@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-beta.3.tgz#c1fdd8d727f54830b6d470c0d9f9fc32d45494f9"
 
 "@ngtools/json-schema@1.1.0":
   version "1.1.0"
@@ -655,10 +645,6 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
-
-bootstrap@4.0.0-beta:
-  version "4.0.0-beta"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.tgz#dc5928175d2e71310bc668cf9e05a907211b72a6"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -2432,10 +2418,6 @@ img-stats@^0.5.2:
   resolved "https://registry.yarnpkg.com/img-stats/-/img-stats-0.5.2.tgz#c203496c42f2d9eb2e5ab8232fa756bab32c9e2b"
   dependencies:
     xmldom "^0.1.19"
-
-immutable@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 in-publish@^2.0.0:
   version "2.0.0"

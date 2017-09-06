@@ -1,5 +1,5 @@
-import { HeroListContainerComponent } from './heroListContainer/component';
-import { HeroDetailContainerComponent } from './heroDetailContainer/component';
+import { HeroListContainerComponent } from './heroListContainer';
+import { HeroDetailContainerComponent } from './heroDetailContainer';
 
 export const HeroRoutes = [
   { path: '', redirectTo: '/heroes', pathMatch: 'full' },
